@@ -17,7 +17,7 @@ def printAudioDetail(item):
     p = item
     try:
         best = p.getbestaudio(preftype="m4a")
-        title = best.title[20:].replace(":", "_")
+        title = best.title[:].replace(":", "_")
 
         filepath = directory + "/"+title+"." + best.extension
         #print("Check: "+filepath)
@@ -44,11 +44,11 @@ def worker():
         q.task_done()
 
 
-playlist = pafy.get_playlist("PLpaD0ybYH0S3XOMnC8ADVycFyEcjRJ6Aj")
+playlist = pafy.get_playlist("PLpaD0ybYH0S1yYJAGHhHgJE46oEfGfl2C")
 videos = playlist['items']
 
 #Threadpool initialization, number of Threads
-for i in range(10):
+for i in range(100):
   t = threading.Thread(target=worker)
   t.daemon = True
   t.start()
