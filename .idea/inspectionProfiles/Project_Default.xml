@@ -6,6 +6,7 @@
         <list>
           <option value="YoutubeDownloadTest.m4a" />
           <option value="YoutubeDownloadTest.*" />
+          <option value="app.flask_sqlalchemy" />
         </list>
       </option>
     </inspection_tool>
